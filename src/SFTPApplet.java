@@ -310,7 +310,7 @@ public class SFTPApplet extends JApplet
     {
     	returnCodeForTransfer = false;
         
-      SwingUtilities.invokeLater(new Runnable() {
+       SwingUtilities.invokeLater(new Runnable() {
     	  public void run() {
     		  returnCodeForTransfer = sendFilesLater(accessCode, "");
     	  }
@@ -357,7 +357,11 @@ public class SFTPApplet extends JApplet
     {
         boolean returnCode = false;
         
-        //
+    	if( null == accessCode ) {
+    		accessCode = "";
+    	}
+
+    	//
         // Multiple files may be passed in, as a semi-colon separated list,
         // as a single file, or as an empty string. 
     	// If fileList is blank or null, then use the list in listOfFilesSelected.
@@ -645,7 +649,12 @@ public class SFTPApplet extends JApplet
         //   </success>
     	// </response>
     	// etc...
-        try
+
+    	if( null == accessCode ) {
+    		accessCode = "";
+    	}
+
+    	try
         {
             //
             // Set the security key, and action (upload photo). These will be POST parameters.
@@ -755,6 +764,11 @@ public class SFTPApplet extends JApplet
         // webservice determines we can send, it will send back the FTP credentials and
         // a new security code. These will be stored in the appropriate class variables.
         //
+    	
+    	if( null == accessCode ) {
+    		accessCode = "";
+    	}
+    	
         try
         {
             //
@@ -1219,7 +1233,7 @@ public class SFTPApplet extends JApplet
         				chooser = new JFileChooser();
         			}
 
-        			chooser.setFileView(new ImageFileView());
+        			// chooser.setFileView(new ImageFileView());
 
         			chooser.setMultiSelectionEnabled(showMultiFiles);
 
@@ -1246,8 +1260,8 @@ public class SFTPApplet extends JApplet
         			AbstractButton listbutton = SwingUtils.getDescendantOfType(AbstractButton.class,
         					chooser, "Icon", UIManager.getIcon("FileChooser.listViewIcon"));
 
-        			listbutton.addActionListener( new ListActionListener(chooser) );
-        			detailbutton.addActionListener( new DetailActionListener(chooser) );            	      
+        			// listbutton.addActionListener( new ListActionListener(chooser) );
+        			// detailbutton.addActionListener( new DetailActionListener(chooser) );            	      
 
 
         			if( null == content )
