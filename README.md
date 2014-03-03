@@ -4,7 +4,7 @@ SFTPApplet
 This applet requires the jsch-0.1.36 (or later) Java Secure Channel library, 
 as well as plugin.jar (which can be found in the jdk)<br>
 <br>
-Overall, this code is licensed with the LGPL 2.1 license. You are free to use or modify this code in any way for your works (open or closed source), with only the following stipulations: Retain all copyright headers in the existing code, and if you make bug fixes to the existing code, we ask that you please be considerate and post your fixes to this repository as well.
+Overall, this code is licensed with the LGPL 2.1 license (some portions may have other licensing arrangements. Please look at all source modules). You are free to use or modify this code in any way for your works (open or closed source), with only the following stipulations: Retain all copyright headers in the existing code, and if you make bug fixes to the existing code, we ask that you please be considerate and post your fixes to this repository as well.
 <br>
 Java applet for use in websites as a file uploader that allows multi-file select, and uses SFTP for secure access.<br>
 <br>
